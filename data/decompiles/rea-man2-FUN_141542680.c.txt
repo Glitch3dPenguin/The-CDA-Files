@@ -1,0 +1,32 @@
+
+undefined8 FUN_141542680(longlong param_1,undefined8 param_2,undefined8 param_3,undefined8 param_4)
+
+{
+  switch(*(undefined1 *)(param_1 + 0x56c)) {
+  case 0:
+    FUN_1405d21b0(param_2,"unauthenticated",param_3,param_4,0);
+    return param_2;
+  case 1:
+    FUN_1405d21b0(param_2,"requesting_application_ticket",param_3,param_4,0);
+    return param_2;
+  case 2:
+    FUN_1405d21b0(param_2,"authenticating",param_3,param_4,0);
+    return param_2;
+  case 3:
+    FUN_1405d21b0(param_2,"retrieving_manifests",param_3,param_4,0);
+    return param_2;
+  case 4:
+    FUN_1405d21b0(param_2,"retrieving_profile",param_3,param_4,0);
+    return param_2;
+  case 5:
+    FUN_1405d21b0(param_2,"retrieving_game_specific_data",param_3,param_4,0);
+    return param_2;
+  case 6:
+    FUN_1405d21b0(param_2,"completed",param_3,param_4,0);
+    return param_2;
+  default:
+    FUN_1405d21b0(param_2,"unknown",param_3,param_4,0);
+    return param_2;
+  }
+}
+

@@ -1,0 +1,36 @@
+
+ulonglong FUN_140191500(undefined8 param_1,undefined4 *param_2,undefined8 param_3,int param_4)
+
+{
+  uint uVar1;
+  ulonglong uVar2;
+  undefined8 local_68;
+  int local_60;
+  undefined8 local_58;
+  undefined4 local_50;
+  undefined4 local_4c;
+  undefined8 local_38;
+  undefined8 local_30;
+  
+  local_50 = *param_2;
+  local_38 = 0;
+  local_30 = 0;
+  local_68 = param_3;
+  local_60 = param_4;
+  local_58 = param_1;
+  uVar2 = FUN_140193b00(&local_68,"1.2.3",0x58);
+  if ((int)uVar2 == 0) {
+    uVar1 = FUN_140193c50(&local_68,4);
+    if (uVar1 != 1) {
+      FUN_1401956a0(&local_68);
+      if ((uVar1 != 2) && ((uVar1 != 0xfffffffb || (local_60 != 0)))) {
+        return (ulonglong)uVar1;
+      }
+      return 0xfffffffd;
+    }
+    *param_2 = local_4c;
+    uVar2 = FUN_1401956a0(&local_68);
+  }
+  return uVar2;
+}
+

@@ -1,0 +1,17 @@
+
+void FUN_1800050c0(longlong param_1,undefined8 param_2,undefined8 param_3,undefined8 param_4)
+
+{
+  if (*(longlong *)(param_1 + 0x40) == 0) {
+    FUN_1800052f0(param_1,2,"InitFireline: Cannot initialize without a fireline client",param_4);
+    return;
+  }
+  FUN_1800052f0(param_1,2,"Initializing fireline...",param_4);
+  fl_client_add_log_func(*(undefined8 *)(param_1 + 0x40),&LAB_180004ba0,param_1);
+  fl_client_add_msg_func(*(undefined8 *)(param_1 + 0x40),FUN_180004bf0,param_1);
+                    /* WARNING: Could not recover jumptable at 0x000180005123. Too many branches */
+                    /* WARNING: Treating indirect jump as call */
+  fl_client_start_listening(*(undefined8 *)(param_1 + 0x40));
+  return;
+}
+

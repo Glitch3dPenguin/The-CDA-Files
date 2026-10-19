@@ -1,0 +1,26 @@
+# EAC string refs (10-19)
+# targets:
+  0x1416b3c88 EAC Authentication Failure (A)
+  0x1416b3d30 EAC Kick Client (A)
+  0x1416eaa32 W16 EasyAntiCheat] InitFinished - FAILURE.
+  0x1416eaaa8 EasyAntiCheat_x64.dll (A)
+  0x1416eaae2 W16 EasyAntiCheat] Failed to load library.
+  0x1416eab32 W16 EasyAntiCheat] Failed to create game client.
+  0x1416eab92 W16 EasyAntiCheat] Failed to find function, CreateGameClient.
+  0x1416eac0a W16 EasyAntiCheat] Terminate.
+  0x1416eac42 W16 EasyAntiCheat] Successful Init.
+  0x1416eaca2 W16 EasyAntiCheat] INTEGRITY VIOLATION
+  0x1416eae02 W16 EasyAntiCheat] %s %s  %s  %s %s %s
+  0x141872272 W16 EasyAntiCheat] - Discarding client notification
+  0x141872322 W16 EasyAntiCheat] - Discarding server notification
+  0x1419ade52 W16 EasyAntiCheat] Client sending QUEUED notification to server 
+  0x1419ae0c2 W16 EasyAntiCheat] Payload size exceeds allocation: %i
+  0x1419ae1a2 W16 EasyAntiCheat] Client sending notification to server of %d b
+  0x1419ae302 W16 EasyAntiCheat]. Cannot send message to server (ServerConnect
+  0x1419ae722 W16 EasyAntiCheat] Receive server message, however GClientEAC ==
+  0x1419ae8a2 W16 EasyAntiCheat] Received server notification of %d bytes
+# lea rip hits:
+# data ptr hits:
+  @0x141febf14 (.data) -> 0x1416b3c88
+  @0x141febf28 (.data) -> 0x1416b3d30
+  @0x141fefdd0 (.data) -> 0x1416eaaa8

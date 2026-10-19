@@ -1,0 +1,10 @@
+
+undefined1 fle_emulator_is_enabled(void)
+
+{
+  undefined1 *puVar1;
+  
+  puVar1 = (undefined1 *)FUN_1800101b0();
+  return *puVar1;
+}
+

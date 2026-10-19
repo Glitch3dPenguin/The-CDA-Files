@@ -1,0 +1,505 @@
+
+/* WARNING: Removing unreachable block (ram,0x000140604dbe) */
+
+void FUN_140604560(longlong *param_1,longlong param_2,undefined8 *param_3)
+
+{
+  LPCRITICAL_SECTION p_Var1;
+  undefined1 auVar2 [16];
+  undefined8 uVar3;
+  undefined8 uVar4;
+  BOOL BVar5;
+  wchar_t *pwVar6;
+  ulonglong uVar7;
+  int *piVar8;
+  int *piVar9;
+  longlong lVar10;
+  uint uVar11;
+  longlong lVar12;
+  int iVar13;
+  undefined2 *puVar14;
+  int iVar15;
+  undefined2 *puVar16;
+  longlong lVar17;
+  longlong lVar18;
+  ulonglong uVar19;
+  int iVar20;
+  int iVar21;
+  int iVar22;
+  int iVar23;
+  int iVar24;
+  int iVar25;
+  int iVar26;
+  int local_res10 [2];
+  undefined8 *local_res18;
+  int local_res20;
+  longlong lVar27;
+  undefined2 *in_stack_fffffffffffffe90;
+  undefined4 uVar28;
+  undefined4 uVar29;
+  undefined **local_158;
+  longlong local_150;
+  int local_148;
+  longlong local_144;
+  int local_13c;
+  undefined4 local_138;
+  undefined4 local_134;
+  int local_130;
+  longlong *local_12c;
+  longlong *plStack_124;
+  int local_118;
+  uint local_114;
+  int local_110;
+  int local_10c;
+  longlong local_108;
+  undefined4 local_100;
+  undefined4 local_fc;
+  wchar_t *local_f8;
+  undefined8 local_f0;
+  int *local_e8;
+  longlong local_e0 [4];
+  undefined8 uStack_c0;
+  undefined8 local_b8;
+  undefined8 uStack_b0;
+  longlong local_a8;
+  undefined8 local_98;
+  undefined8 uStack_90;
+  longlong local_88;
+  undefined8 local_78;
+  undefined8 uStack_70;
+  undefined8 local_68;
+  longlong local_60;
+  
+  local_68 = 0xfffffffffffffffe;
+  local_res18 = param_3;
+  if (DAT_1420f0dd8 == 1) {
+    local_f8 = (wchar_t *)0x0;
+    local_f0 = 0x1600000016;
+    if (DAT_1420d69b8 == (longlong *)0x0) {
+      FUN_1411808b0();
+    }
+    pwVar6 = (wchar_t *)(**(code **)(*DAT_1420d69b8 + 0x18))(DAT_1420d69b8,0,0x2c,8);
+    builtin_wcsncpy(pwVar6,L"FulfillCompressedRead",0x16);
+    local_f8 = pwVar6;
+    FUN_1406081d0(param_1,&local_f8,param_2);
+    local_f0 = 0;
+    if (pwVar6 != (wchar_t *)0x0) {
+      if (DAT_1420d69b8 == (longlong *)0x0) {
+        FUN_1411808b0();
+      }
+      (**(code **)(*DAT_1420d69b8 + 0x20))(DAT_1420d69b8,pwVar6);
+      local_f8 = (wchar_t *)0x0;
+    }
+  }
+  local_108 = *(longlong *)(param_2 + 0x28);
+  local_110 = 1;
+  local_10c = 0;
+  uVar3 = *param_3;
+  uVar4 = param_3[1];
+  uVar28 = *(undefined4 *)(param_2 + 0x1c);
+  local_a8 = *(longlong *)((longlong)param_1 + 0x8c);
+  p_Var1 = (LPCRITICAL_SECTION)(local_a8 + 8);
+  BVar5 = TryEnterCriticalSection(p_Var1);
+  if (BVar5 == 0) {
+    EnterCriticalSection(p_Var1);
+  }
+  local_e0[3] = uVar3;
+  uStack_c0 = uVar4;
+  (**(code **)(*param_1 + 0x68))(param_1,local_e0 + 3,uVar28,8,&local_118);
+  LeaveCriticalSection(p_Var1);
+  puVar16 = &DAT_1416a55a0;
+  if (local_118 != -0x61d57c3f) {
+    if (local_118 == -0x3e7cd562) {
+      local_114 = (local_114 * 0x10000 + (local_114 & 0xff00)) * 0x100 + (local_114 >> 8 & 0xff00) +
+                  (local_114 >> 0x18);
+    }
+    else {
+      if (*(uint *)(param_2 + 0x14) == 0) {
+        in_stack_fffffffffffffe90 = &DAT_1416a55a0;
+      }
+      else {
+        if (0x7fffffff < *(uint *)(param_2 + 0x14)) {
+          FUN_140679530("i>=0 && (i<ArrayNum||(i==0 && ArrayNum==0))",
+                        "c:\\gamedev\\bac\\floating\\16adb548cc484f24\\game\\unrealengine3\\development\\src\\core\\inc\\Array.h"
+                        ,0x287,&DAT_1416a55a0);
+        }
+        in_stack_fffffffffffffe90 = *(undefined2 **)(param_2 + 0xc);
+      }
+      FUN_14066eee0(DAT_1420dfb00,0x2ff,
+                    L"Detected data corruption [header] trying to read %i bytes at offset %i from \'%s\'. Please delete file and recook."
+                    ,*(undefined4 *)(param_2 + 0x24),*(undefined4 *)(param_2 + 0x1c),
+                    in_stack_fffffffffffffe90);
+      if (*(uint *)(param_2 + 0x14) == 0) {
+        puVar14 = &DAT_1416a55a0;
+      }
+      else {
+        if (0x7fffffff < *(uint *)(param_2 + 0x14)) {
+          FUN_140679530("i>=0 && (i<ArrayNum||(i==0 && ArrayNum==0))",
+                        "c:\\gamedev\\bac\\floating\\16adb548cc484f24\\game\\unrealengine3\\development\\src\\core\\inc\\Array.h"
+                        ,0x287,&DAT_1416a55a0);
+        }
+        puVar14 = *(undefined2 **)(param_2 + 0xc);
+      }
+      FUN_1406bf680(puVar14);
+    }
+  }
+  uVar11 = local_114;
+  if (local_114 == 0x9e2a83c1) {
+    uVar11 = 0x20000;
+  }
+  local_res10[0] = (int)(*(int *)(param_2 + 0x24) + -1 + uVar11) / (int)uVar11 + 1;
+  uVar19 = (ulonglong)local_res10[0];
+  auVar2._8_8_ = 0;
+  auVar2._0_8_ = uVar19;
+  uVar7 = SUB168(ZEXT816(8) * auVar2,0);
+  if (SUB168(ZEXT816(8) * auVar2,8) != 0) {
+    uVar7 = 0xffffffffffffffff;
+  }
+  if (DAT_1420d69b8 == (longlong *)0x0) {
+    FUN_1411808b0();
+  }
+  piVar8 = (int *)(**(code **)(*DAT_1420d69b8 + 0x10))(DAT_1420d69b8,uVar7 & 0xffffffff);
+  local_res20 = local_res10[0] * 8;
+  uVar3 = *local_res18;
+  uVar4 = local_res18[1];
+  local_e0[2] = *(longlong *)((longlong)param_1 + 0x8c);
+  p_Var1 = (LPCRITICAL_SECTION)(local_e0[2] + 8);
+  local_e8 = piVar8;
+  BVar5 = TryEnterCriticalSection(p_Var1);
+  if (BVar5 == 0) {
+    EnterCriticalSection(p_Var1);
+  }
+  local_b8 = uVar3;
+  uStack_b0 = uVar4;
+  (**(code **)(*param_1 + 0x68))(param_1,&local_b8,0xffffffff,local_res20,piVar8);
+  LeaveCriticalSection(p_Var1);
+  uVar28 = (undefined4)((ulonglong)in_stack_fffffffffffffe90 >> 0x20);
+  iVar15 = 0;
+  if (local_118 == -0x61d57c3f) {
+    iVar13 = 1;
+    if ((1 < local_res10[0]) && (iVar15 = 0, 7 < local_res10[0] - 1U)) {
+      iVar15 = 0;
+      iVar21 = 0;
+      iVar23 = 0;
+      iVar25 = 0;
+      lVar17 = 1;
+      uVar11 = local_res10[0] - 1U & 0x80000007;
+      if ((int)uVar11 < 0) {
+        uVar11 = (uVar11 - 1 | 0xfffffff8) + 1;
+      }
+      piVar9 = piVar8 + 7;
+      iVar20 = iVar15;
+      iVar22 = iVar21;
+      iVar24 = iVar23;
+      iVar26 = iVar25;
+      do {
+        iVar15 = piVar9[-4] + iVar15;
+        iVar21 = piVar9[-2] + iVar21;
+        iVar23 = *piVar9 + iVar23;
+        iVar25 = piVar9[2] + iVar25;
+        iVar20 = piVar9[4] + iVar20;
+        iVar22 = piVar9[6] + iVar22;
+        iVar24 = piVar9[8] + iVar24;
+        iVar26 = piVar9[10] + iVar26;
+        iVar13 = iVar13 + 8;
+        lVar17 = lVar17 + 8;
+        piVar9 = piVar9 + 0x10;
+      } while (lVar17 < (int)(local_res10[0] - uVar11));
+      iVar15 = iVar15 + iVar20 + iVar23 + iVar24 + iVar21 + iVar22 + iVar25 + iVar26;
+    }
+    iVar21 = 0;
+    iVar23 = 0;
+    lVar17 = (longlong)iVar13;
+    if (lVar17 < (longlong)uVar19) {
+      if (1 < (longlong)(uVar19 - lVar17)) {
+        piVar9 = piVar8 + lVar17 * 2 + 3;
+        lVar12 = ((uVar19 - lVar17) - 2 >> 1) + 1;
+        lVar17 = lVar17 + lVar12 * 2;
+        do {
+          iVar21 = iVar21 + piVar9[-2];
+          iVar23 = iVar23 + *piVar9;
+          piVar9 = piVar9 + 4;
+          lVar12 = lVar12 + -1;
+        } while (lVar12 != 0);
+      }
+      if (lVar17 < (longlong)uVar19) {
+        iVar15 = iVar15 + piVar8[lVar17 * 2 + 1];
+      }
+      iVar15 = iVar15 + iVar21 + iVar23;
+    }
+  }
+  else {
+    lVar17 = 0;
+    if (0 < (longlong)uVar19) {
+      do {
+        uVar11 = piVar8[lVar17 * 2];
+        piVar8[lVar17 * 2] =
+             (uVar11 * 0x10000 + (uVar11 & 0xff00)) * 0x100 + (uVar11 >> 8 & 0xff00) +
+             (uVar11 >> 0x18);
+        uVar11 = piVar8[lVar17 * 2 + 1];
+        iVar13 = (uVar11 * 0x10000 + (uVar11 & 0xff00)) * 0x100 + (uVar11 >> 8 & 0xff00) +
+                 (uVar11 >> 0x18);
+        piVar8[lVar17 * 2 + 1] = iVar13;
+        if (0 < lVar17) {
+          iVar15 = iVar15 + iVar13;
+        }
+        lVar17 = lVar17 + 1;
+      } while (lVar17 < (longlong)uVar19);
+    }
+  }
+  if (piVar8[1] != iVar15) {
+    if (*(uint *)(param_2 + 0x14) == 0) {
+      puVar14 = &DAT_1416a55a0;
+    }
+    else {
+      if (0x7fffffff < *(uint *)(param_2 + 0x14)) {
+        FUN_140679530("i>=0 && (i<ArrayNum||(i==0 && ArrayNum==0))",
+                      "c:\\gamedev\\bac\\floating\\16adb548cc484f24\\game\\unrealengine3\\development\\src\\core\\inc\\Array.h"
+                      ,0x287,&DAT_1416a55a0);
+      }
+      puVar14 = *(undefined2 **)(param_2 + 0xc);
+    }
+    in_stack_fffffffffffffe90 = (undefined2 *)CONCAT44(uVar28,*(undefined4 *)(param_2 + 0x1c));
+    FUN_14066eee0(DAT_1420dfb00,0x2ff,
+                  L"Detected data corruption [incorrect uncompressed size] calculated %i bytes, requested %i bytes at offset %i from \'%s\'. Please delete file and recook."
+                  ,iVar15,*(undefined4 *)(param_2 + 0x24),in_stack_fffffffffffffe90,puVar14);
+    if (*(uint *)(param_2 + 0x14) == 0) {
+      puVar14 = &DAT_1416a55a0;
+    }
+    else {
+      if (0x7fffffff < *(uint *)(param_2 + 0x14)) {
+        FUN_140679530("i>=0 && (i<ArrayNum||(i==0 && ArrayNum==0))",
+                      "c:\\gamedev\\bac\\floating\\16adb548cc484f24\\game\\unrealengine3\\development\\src\\core\\inc\\Array.h"
+                      ,0x287,&DAT_1416a55a0);
+      }
+      puVar14 = *(undefined2 **)(param_2 + 0xc);
+    }
+    FUN_1406bf680(puVar14);
+  }
+  if (*(int *)(param_2 + 0x20) < local_res20 + 8 + *piVar8) {
+    if (*(uint *)(param_2 + 0x14) == 0) {
+      in_stack_fffffffffffffe90 = &DAT_1416a55a0;
+    }
+    else {
+      if (0x7fffffff < *(uint *)(param_2 + 0x14)) {
+        FUN_140679530("i>=0 && (i<ArrayNum||(i==0 && ArrayNum==0))",
+                      "c:\\gamedev\\bac\\floating\\16adb548cc484f24\\game\\unrealengine3\\development\\src\\core\\inc\\Array.h"
+                      ,0x287,&DAT_1416a55a0);
+      }
+      in_stack_fffffffffffffe90 = *(undefined2 **)(param_2 + 0xc);
+    }
+    FUN_14066eee0(DAT_1420dfb00,0x2ff,
+                  L"Detected data corruption [undershoot] trying to read %i bytes at offset %i from \'%s\'. Please delete file and recook."
+                  ,*(undefined4 *)(param_2 + 0x24),*(undefined4 *)(param_2 + 0x1c),
+                  in_stack_fffffffffffffe90);
+    if (*(uint *)(param_2 + 0x14) == 0) {
+      puVar14 = &DAT_1416a55a0;
+    }
+    else {
+      if (0x7fffffff < *(uint *)(param_2 + 0x14)) {
+        FUN_140679530("i>=0 && (i<ArrayNum||(i==0 && ArrayNum==0))",
+                      "c:\\gamedev\\bac\\floating\\16adb548cc484f24\\game\\unrealengine3\\development\\src\\core\\inc\\Array.h"
+                      ,0x287,&DAT_1416a55a0);
+      }
+      puVar14 = *(undefined2 **)(param_2 + 0xc);
+    }
+    FUN_1406bf680(puVar14);
+  }
+  uVar28 = (undefined4)((ulonglong)in_stack_fffffffffffffe90 >> 0x20);
+  if (*(int *)(param_2 + 0x24) != iVar15) {
+    if (*(uint *)(param_2 + 0x14) == 0) {
+      puVar14 = &DAT_1416a55a0;
+    }
+    else {
+      if (0x7fffffff < *(uint *)(param_2 + 0x14)) {
+        FUN_140679530("i>=0 && (i<ArrayNum||(i==0 && ArrayNum==0))",
+                      "c:\\gamedev\\bac\\floating\\16adb548cc484f24\\game\\unrealengine3\\development\\src\\core\\inc\\Array.h"
+                      ,0x287,&DAT_1416a55a0);
+      }
+      puVar14 = *(undefined2 **)(param_2 + 0xc);
+    }
+    in_stack_fffffffffffffe90 = (undefined2 *)CONCAT44(uVar28,*(undefined4 *)(param_2 + 0x1c));
+    FUN_14066eee0(DAT_1420dfb00,0x2ff,
+                  L"Detected data corruption [incorrect uncompressed size] calculated %i bytes, requested %i bytes at offset %i from \'%s\'. Please delete file and recook."
+                  ,iVar15,*(undefined4 *)(param_2 + 0x24),in_stack_fffffffffffffe90,puVar14);
+    if (*(uint *)(param_2 + 0x14) != 0) {
+      if (0x7fffffff < *(uint *)(param_2 + 0x14)) {
+        FUN_140679530("i>=0 && (i<ArrayNum||(i==0 && ArrayNum==0))",
+                      "c:\\gamedev\\bac\\floating\\16adb548cc484f24\\game\\unrealengine3\\development\\src\\core\\inc\\Array.h"
+                      ,0x287,&DAT_1416a55a0);
+      }
+      puVar16 = *(undefined2 **)(param_2 + 0xc);
+    }
+    FUN_1406bf680(puVar16);
+  }
+  iVar15 = 0;
+  lVar17 = 1;
+  if (1 < (longlong)uVar19) {
+    do {
+      iVar13 = piVar8[lVar17 * 2];
+      if (piVar8[lVar17 * 2] <= iVar15) {
+        iVar13 = iVar15;
+      }
+      iVar15 = iVar13;
+      lVar17 = lVar17 + 1;
+    } while (lVar17 < (longlong)uVar19);
+  }
+  if (DAT_1420d69b8 == (longlong *)0x0) {
+    FUN_1411808b0();
+  }
+  lVar17 = (**(code **)(*DAT_1420d69b8 + 0x10))(DAT_1420d69b8,iVar15,8);
+  local_e0[0] = lVar17;
+  if (DAT_1420d69b8 == (longlong *)0x0) {
+    FUN_1411808b0();
+  }
+  local_e0[1] = (**(code **)(*DAT_1420d69b8 + 0x10))(DAT_1420d69b8,iVar15);
+  uVar3 = *local_res18;
+  uVar4 = local_res18[1];
+  piVar8 = piVar8 + 2;
+  iVar15 = *piVar8;
+  local_60 = *(longlong *)((longlong)param_1 + 0x8c);
+  p_Var1 = (LPCRITICAL_SECTION)(local_60 + 8);
+  BVar5 = TryEnterCriticalSection(p_Var1);
+  if (BVar5 == 0) {
+    EnterCriticalSection(p_Var1);
+  }
+  lVar27 = lVar17;
+  local_98 = uVar3;
+  uStack_90 = uVar4;
+  (**(code **)(*param_1 + 0x68))(param_1,&local_98,0xffffffff,iVar15,lVar17);
+  LeaveCriticalSection(p_Var1);
+  lVar18 = 1;
+  lVar10 = 0;
+  iVar15 = local_res10[0] + -1;
+  lVar12 = local_108;
+  local_res20 = iVar15;
+  do {
+    uVar28 = (undefined4)((ulonglong)lVar27 >> 0x20);
+    uVar29 = (undefined4)((ulonglong)in_stack_fffffffffffffe90 >> 0x20);
+    local_13c = *piVar8;
+    local_148 = piVar8[1];
+    local_138 = *(undefined4 *)(param_2 + 0x30);
+    local_158 = &PTR_FUN_1416c3520;
+    local_134 = 0;
+    local_12c = (longlong *)0x0;
+    LOCK();
+    local_130 = 1;
+    UNLOCK();
+    plStack_124 = DAT_142207888;
+    local_150 = lVar12;
+    local_144 = lVar17;
+    if ((DAT_142207888 == DAT_142207890) && (DAT_14220789c != 0)) {
+      plStack_124 = (longlong *)0x0;
+LAB_140604db4:
+      local_130 = 1;
+      local_134 = 0;
+      local_158 = &PTR_FUN_1416c3520;
+      local_12c = (longlong *)0x0;
+      local_res10[0] = 0;
+      FUN_14010e240(local_res10,L"FAsyncUncompress");
+      in_stack_fffffffffffffe90 = (undefined2 *)CONCAT44(uVar29,local_134);
+      lVar27 = CONCAT44(uVar28,local_13c);
+      FUN_1406813a0(local_138,local_150,local_148,local_144,lVar27,in_stack_fffffffffffffe90);
+      FUN_14010e240();
+      LOCK();
+      local_130 = local_130 + -1;
+      UNLOCK();
+    }
+    else {
+      if (DAT_142207888 == (longlong *)0x0) goto LAB_140604db4;
+      local_12c = (longlong *)(**(code **)(*DAT_142207870 + 8))(DAT_142207870,1);
+      (**(code **)(*local_12c + 0x18))(local_12c);
+      (**(code **)(*plStack_124 + 0x18))(plStack_124,&local_158);
+    }
+    local_108 = lVar12 + piVar8[1];
+    if (local_110 < iVar15) {
+      local_110 = local_110 + 1;
+      lVar18 = lVar18 + 1;
+      lVar10 = 1 - lVar10;
+      uVar3 = *local_res18;
+      uVar4 = local_res18[1];
+      lVar17 = local_e0[lVar10];
+      piVar8 = local_e8 + lVar18 * 2;
+      iVar15 = *piVar8;
+      local_88 = *(longlong *)((longlong)param_1 + 0x8c);
+      p_Var1 = (LPCRITICAL_SECTION)(local_88 + 8);
+      BVar5 = TryEnterCriticalSection(p_Var1);
+      if (BVar5 == 0) {
+        EnterCriticalSection(p_Var1);
+      }
+      lVar27 = lVar17;
+      local_78 = uVar3;
+      uStack_70 = uVar4;
+      (**(code **)(*param_1 + 0x68))(param_1,&local_78,0xffffffff,iVar15,lVar17);
+      LeaveCriticalSection(p_Var1);
+      iVar15 = local_res20;
+    }
+    else {
+      local_10c = 1;
+    }
+    lVar12 = local_108;
+    uVar28 = (undefined4)((ulonglong)lVar27 >> 0x20);
+    uVar29 = (undefined4)((ulonglong)in_stack_fffffffffffffe90 >> 0x20);
+    if (plStack_124 == (longlong *)0x0) {
+      if (local_130 != 0) {
+        local_100 = 0;
+        FUN_14010e240(&local_100,L"FAsyncUncompress");
+        in_stack_fffffffffffffe90 = (undefined2 *)CONCAT44(uVar29,local_134);
+        lVar27 = CONCAT44(uVar28,local_13c);
+        FUN_1406813a0(local_138,local_150,local_148,local_144,lVar27,in_stack_fffffffffffffe90);
+        FUN_14010e240();
+        LOCK();
+        local_130 = local_130 + -1;
+        UNLOCK();
+        goto LAB_140604fa8;
+      }
+    }
+    else {
+      iVar13 = (**(code **)(*plStack_124 + 0x20))(plStack_124,&local_158);
+      uVar28 = (undefined4)((ulonglong)lVar27 >> 0x20);
+      uVar29 = (undefined4)((ulonglong)in_stack_fffffffffffffe90 >> 0x20);
+      if (iVar13 == 0) {
+LAB_140604fa8:
+        if (plStack_124 != (longlong *)0x0) {
+          (**(code **)(*local_12c + 0x28))(local_12c,0xffffffff);
+          plStack_124 = (longlong *)0x0;
+        }
+      }
+      else {
+        local_fc = 0;
+        FUN_14010e240(&local_fc,L"FAsyncUncompress");
+        in_stack_fffffffffffffe90 = (undefined2 *)CONCAT44(uVar29,local_134);
+        lVar27 = CONCAT44(uVar28,local_13c);
+        FUN_1406813a0(local_138,local_150,local_148,local_144,lVar27,in_stack_fffffffffffffe90);
+        FUN_14010e240();
+        LOCK();
+        local_130 = local_130 + -1;
+        UNLOCK();
+        if (local_12c != (longlong *)0x0) {
+          (**(code **)(*local_12c + 0x10))(local_12c);
+        }
+        plStack_124 = (longlong *)0x0;
+      }
+    }
+    local_158 = &PTR_FUN_1416c3520;
+    if (local_12c != (longlong *)0x0) {
+      (**(code **)(*DAT_142207870 + 0x10))();
+    }
+    if (local_10c != 0) {
+      if (DAT_1420d69b8 == (longlong *)0x0) {
+        FUN_1411808b0();
+      }
+      (**(code **)(*DAT_1420d69b8 + 0x20))(DAT_1420d69b8,local_e8);
+      if (DAT_1420d69b8 == (longlong *)0x0) {
+        FUN_1411808b0();
+      }
+      (**(code **)(*DAT_1420d69b8 + 0x20))(DAT_1420d69b8,local_e0[0]);
+      if (DAT_1420d69b8 == (longlong *)0x0) {
+        FUN_1411808b0();
+      }
+      (**(code **)(*DAT_1420d69b8 + 0x20))(DAT_1420d69b8,local_e0[1]);
+      return;
+    }
+  } while( true );
+}
+
