@@ -58,6 +58,9 @@ Per manifest service entry, the exe:
 - The **`url` field is the endpoint passed straight into fireline.dll** = where "our instance" goes.
 - Unknowns that only a live capture or fireline.dll can supply: the real service name set the MMS layer expects, and the exact `url`/`client` value format (full https URL? path? token?) — the live manifest is downloaded from the (now-questionable) production backend, so capture = T3 (docs/06) or a fireline.dll string pass.
 
-## Status at shelve
+## fireline.dll — the transport layer (dropped 10-19 18:24, mapped 19:5x)
 
-fireline.dll (503,296 B) = the wire-spec target; drop owed from Alex ("i'll get it to her later", 10-19 16:48). Until it lands: the protocol surface is mapped end-to-end EXCEPT the transport internals (endpoints/headers/auth) and the ordinal→name map.
+- **Export table (`data/fireline_exports.txt`): 266 named exports, ordinal base 1** — the full client API (`fl_client_*`, `fl_r_*`, `fl_options_from_json`, ...). Quirk: the export directory's `AddressOfNames`/`AddressOfNameOrdinals` are swapped vs the PE spec; resolved empirically (266/266 consistent, no collisions).
+- **Import map (`data/fireline_import_map.txt`): the exe's 159 IAT thunks (VA 0x141FE3D50+) are ALL name RVAs — zero ordinal-form imports** ⇒ fireline.dll is NOT packed. 159/159 resolve against the export table. The 10-14 "ord#24028"-class values were 16-bit-truncated name RVAs (0x1fe5e0a → 0x5e0a = 24074); the packed-DLL hypothesis is dead. (`data/fireline_imports.txt` = the superseded 10-14 record, marked in-file, kept for the record.)
+- Notable imports: `fl_client_set_proxy_url` (the client's HTTP route is configurable — the forgery seam at the transport level) · `fl_client_add_service` (the registration target of FUN_1411c4620) · `fl_r_inbox_list_entries` / `fl_r_parties_for_identity` (the social/party surface) · the full `fl_r_matchmaking_*` set.
+- **Status:** transport internals (base URL / headers / auth / the config-JSON→URL→request fns) = in-flight REA/Ghidra string + xref pass over the DLL; findings land as a follow-up commit. Everything downstream of that (what SD's live manifest actually serves) still needs the T3 live capture (docs/06) — the DLL gives the shape, the capture gives the contents.

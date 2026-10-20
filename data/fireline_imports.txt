@@ -1,3 +1,5 @@
+SUPERSEDED 2026-10-19 — these "ord#NNNNN" values are NOT ordinals: they are 16-bit-truncated name RVAs (e.g. 0x1fe5e0a -> low16 0x5e0a = 24074). All 159 IAT entries are name RVAs; the resolved named map = data/fireline_import_map.txt (159/159, zero ordinal-form imports; the DLL is not packed). Kept for the record.
+
 0x141fe3d50 ord#24028
 0x141fe3d58 ord#24074
 0x141fe3d60 ord#24106
